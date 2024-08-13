@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clinic Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#appointments">Appointments</a></li>
+                <li><a href="#patients">Patients</a></li>
+                <li><a href="#staff">Staff</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="appointments">
+            <h2>Appointments</h2>
+            <button onclick="showAppointmentForm()">Add New Appointment</button>
+            <div id="appointment-form" style="display:none;">
+                <h3>New Appointment</h3>
+                <form>
+                    <label for="patient-name">Patient Name:</label>
+                    <input type="text" id="patient-name" name="patient-name" required>
+                    <label for="appointment-date">Date:</label>
+                    <input type="date" id="appointment-date" name="appointment-date" required>
+                    <label for="appointment-time">Time:</label>
+                    <input type="time" id="appointment-time" name="appointment-time" required>
+                    <button type="submit">Save Appointment</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="patients">
+            <h2>Patients</h2>
+            <button onclick="showPatientForm()">Add New Patient</button>
+            <div id="patient-form" style="display:none;">
+                <h3>New Patient</h3>
+                <form>
+                    <label for="patient-id">Patient ID:</label>
+                    <input type="text" id="patient-id" name="patient-id" required>
+                    <label for="patient-name">Name:</label>
+                    <input type="text" id="patient-name" name="patient-name" required>
+                    <label for="patient-dob">Date of Birth:</label>
+                    <input type="date" id="patient-dob" name="patient-dob" required>
+                    <label for="patient-contact">Contact:</label>
+                    <input type="tel" id="patient-contact" name="patient-contact" required>
+                    <button type="submit">Save Patient</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="staff">
+            <h2>Staff</h2>
+            <button onclick="showStaffForm()">Add New Staff</button>
+            <div id="staff-form" style="display:none;">
+                <h3>New Staff</h3>
+                <form>
+                    <label for="staff-id">Staff ID:</label>
+                    <input type="text" id="staff-id" name="staff-id" required>
+                    <label for="staff-name">Name:</label>
+                    <input type="text" id="staff-name" name="staff-name" required>
+                    <label for="staff-role">Role:</label>
+                    <input type="text" id="staff-role" name="staff-role" required>
+                    <label for="staff-contact">Contact:</label>
+                    <input type="tel" id="staff-contact" name="staff-contact" required>
+                    <button type="submit">Save Staff</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Clinic Management System</p>
+    </footer>
+
+    <script>
+        function showAppointmentForm() {
+            var form = document.getElementById('appointment-form');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function showPatientForm() {
+            var form = document.getElementById('patient-form');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function showStaffForm() {
+            var form = document.getElementById('staff-form');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
